@@ -40,7 +40,7 @@
 
   No server-side pagination — all data is loaded at once.
 # Optimization
-  Memoize rows to not re-render rows not being editing
+  Memoize rows and popover to not re-render rows and assignees not being editing
 
   Pagination to not render all data at once
 
