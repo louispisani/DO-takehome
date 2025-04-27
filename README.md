@@ -26,6 +26,7 @@
 
 # Running Locally
   from both backend/frontend folders:
+  
     npm install
     npm run dev
 
@@ -38,6 +39,10 @@
   Responsiveness is basic
 
   No server-side pagination — all data is loaded at once.
+# Optimization
+  Memoize rows to not re-render rows not being editing
+
+  Pagination to not render all data at once
 
 # Future Improvements
   Improve mobile responsiveness and small-screen handling.
