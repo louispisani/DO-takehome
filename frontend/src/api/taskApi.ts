@@ -1,6 +1,7 @@
 
-const API_BASE = 'http://localhost:3001';
-
+const API_BASE = window.location.hostname === 'localhost'
+    ? 'http://localhost:3001'
+    : 'https://do-takehome-5.onrender.com';
 const handleResponse = async (res: Response) => {
     if (!res.ok) {
         const errorText = await res.text();
