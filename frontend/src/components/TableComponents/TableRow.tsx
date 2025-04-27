@@ -3,7 +3,7 @@ import { TableCell, Box, Avatar, Typography, IconButton, Link, TextField, TableR
 import { GridCloseIcon, GridAddIcon } from "@mui/x-data-grid";
 import { TAssignee, TColumn, TColumnTypes } from "../../types/types";
 import { AssigneeTooltip } from "./AssigneeTooltip";
-
+// memoize the rows to prevent unnecessary re-renders
 const Row = React.memo(({
     allAssignees,
     cellStyle,
@@ -17,11 +17,10 @@ const Row = React.memo(({
     row,
     setAnchorEl,
 }: RowProps) => {
-
+    // render row dynamically based on the column type
     return (
         <TableRow key={row.id}>
             {columns.map(col => {
-
                 const value = row[col.field];
                 const editing = isEditing(row.id, col.field);
 
@@ -100,6 +99,7 @@ const Row = React.memo(({
                         </TableCell>
                     );
                 }
+
                 if (col.type === TColumnTypes.Date) {
                     const formatDateInput = (dateStr: string) => {
                         const d = new Date(dateStr);
@@ -120,7 +120,7 @@ const Row = React.memo(({
                                     <TextField
                                         autoFocus
                                         type="date"
-                                        value={formatDateInput(editedValue ?? value)} // Use the formatted date for the input
+                                        value={formatDateInput(editedValue ?? value)}
                                         onChange={handleInputChange}
                                         onBlur={handleSaveOnBlur}
                                         onKeyDown={(e) => e.key === "Enter" && handleSaveOnBlur()}
@@ -133,14 +133,13 @@ const Row = React.memo(({
                                     />
                                 ) : (
                                     <Typography variant="body2" sx={{ fontSize: "14px" }}>
-                                        {formatDateVal(value)} {/* Display the date in the format we want */}
+                                        {formatDateVal(value)}
                                     </Typography>
                                 )}
                             </Box>
                         </TableCell>
                     );
                 }
-
 
                 return (
                     <TableCell key={col.field} sx={{ padding: "8px" }}>

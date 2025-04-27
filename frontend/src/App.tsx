@@ -80,6 +80,7 @@ const App = () => {
   const isEditing = (id: string, field: string) =>
     editingCell?.id === id && editingCell.field === field;
 
+  // remove assignee from the task
   const handleRemoveAssignee = async (assignee: TAssignee) => {
     if (!editingCell) return;
     const updatedTask = tasks.find((task) => task.id === editingCell.id);
@@ -98,6 +99,7 @@ const App = () => {
     }
   };
 
+  // add assignee to the task
   const handleAddAssignee = async (assignee: TAssignee) => {
     if (!editingCell) return;
     const { id, field } = editingCell;
@@ -116,7 +118,7 @@ const App = () => {
               ...task,
               assignees: [
                 ...(task.assignees || []),
-                { ...assignee, avatar: assignee.avatar ?? '' }, // Ensure avatar is a string
+                { ...assignee, avatar: assignee.avatar ?? '' },
               ],
             };
           }

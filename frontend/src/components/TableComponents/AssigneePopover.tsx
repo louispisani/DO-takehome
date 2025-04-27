@@ -29,6 +29,7 @@ const AssigneePopover = React.memo((
                 {editingCell?.field === TColumnTypes.Assignees && (
                     <>
                         {availableAssignees.length > 0 ? (
+                            // Autocomplete for adding assignees
                             <Autocomplete
                                 options={availableAssignees}
                                 getOptionLabel={(option) => option.name}

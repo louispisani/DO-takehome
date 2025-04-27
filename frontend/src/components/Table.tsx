@@ -34,7 +34,7 @@ const AssignTable: React.FC<AssignTableProps> = ({
     tasks,
 }) => {
     const [page, setPage] = useState(0);
-    const [rowsPerPage,] = useState(5); // You can allow user to change if you want
+    const rowsPerPage = 5;
 
     const handleChangePage = (_event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
         setPage(newPage);
