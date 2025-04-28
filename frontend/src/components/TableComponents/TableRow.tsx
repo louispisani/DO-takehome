@@ -113,7 +113,10 @@ const Row = React.memo(({
                     return (
                         <TableCell key={col.field} sx={{ padding: "8px" }}>
                             <Box
-                                sx={{ ...cellStyle }}
+                                sx={{
+                                    ...cellStyle,
+                                    width: "120px",
+                                }}
                                 onClick={() => handleCellClick(row.id, col.field, value)}
                             >
                                 {editing ? (
@@ -132,7 +135,16 @@ const Row = React.memo(({
                                         }}
                                     />
                                 ) : (
-                                    <Typography variant="body2" sx={{ fontSize: "14px" }}>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{
+                                            fontSize: "14px",
+                                            width: "100%",
+                                            whiteSpace: "nowrap",
+                                            overflow: "hidden",
+                                            textOverflow: "ellipsis",
+                                        }}
+                                    >
                                         {formatDateVal(value)}
                                     </Typography>
                                 )}
