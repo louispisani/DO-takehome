@@ -1,8 +1,7 @@
 # React + TypeScript + Vite + Node + Express
   A dynamic task management table where users can edit cells and manage assignees.
-  Columns are generated based on data types (e.g., text, dropdowns, dates), and a date picker is used for date fields.
-  This is a partial implementation showcasing key functionality rather than exhaustive type coverage.
-
+  Columns are generated based on data types.
+  
 # Built with:
 
   Frontend: React, TypeScript, Vite, Material UI (including Autocomplete)
