@@ -17,6 +17,16 @@ const Row = React.memo(({
     row,
     setAnchorEl,
 }: RowProps) => {
+
+    const formatDateInput = (dateStr: string) => {
+        const d = new Date(dateStr);
+
+        return d.toISOString().split("T")[0];
+    };
+    const formatDateVal = (dateStr: string) => {
+        const [year, month, day] = dateStr.split("-");
+        return `${month}/${day}/${year}`;
+    }
     // render row dynamically based on the column type
     return (
         <TableRow key={row.id}>
@@ -101,15 +111,6 @@ const Row = React.memo(({
                 }
 
                 if (col.type === TColumnTypes.Date) {
-                    const formatDateInput = (dateStr: string) => {
-                        const d = new Date(dateStr);
-
-                        return d.toISOString().split("T")[0];
-                    };
-                    function formatDateVal(dateStr: string) {
-                        const [year, month, day] = dateStr.split("-");
-                        return `${month}/${day}/${year}`;
-                    }
                     return (
                         <TableCell key={col.field} sx={{ padding: "8px" }}>
                             <Box
