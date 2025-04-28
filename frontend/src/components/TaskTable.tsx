@@ -21,7 +21,7 @@ const cellStyle: React.CSSProperties = {
     cursor: 'pointer',
 };
 
-const AssignTable: React.FC<AssignTableProps> = ({
+const TaskTable: React.FC<TaskTableProps> = ({
     allAssignees,
     columns,
     editedValue,
@@ -86,9 +86,9 @@ const AssignTable: React.FC<AssignTableProps> = ({
     );
 };
 
-export default AssignTable;
+export default TaskTable;
 
-interface AssignTableProps {
+interface TaskTableProps {
     allAssignees: TAssignee[];
     columns: TColumn[];
     editedValue: any;

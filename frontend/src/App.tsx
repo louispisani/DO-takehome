@@ -8,7 +8,7 @@ import {
 import { fetchColumns, fetchAssignees, fetchTasks, updateTask } from './api/taskApi';
 import { TAssignee, TColumn, TColumnTypes, TTask } from './types/types';
 import AssigneePopover from './components/TableComponents/AssigneePopover';
-import AssignTable from './components/Table';
+import TaskTable from './components/TaskTable';
 
 const App = () => {
   const [allAssignees, setAllAssignees] = useState<TAssignee[]>([]);
@@ -156,7 +156,7 @@ const App = () => {
         open={isPopoverOpen}
         setAnchorEl={setAnchorEl}
       />
-      <AssignTable
+      <TaskTable
         allAssignees={allAssignees}
         columns={columns}
         editedValue={editedValue}
