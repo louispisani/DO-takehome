@@ -59,6 +59,6 @@
   Enhance error handling and loading states ie Skeletons.
 
 # Deployment Links
-Frontend (Vercel): [https://do-frontend-wvpcvz67b-louies-projects-473833c8.vercel.app/]
+Frontend (Vercel): [https://do-frontend.vercel.app/]
 
 Backend (Render): [https://do-takehome-5.onrender.com]
