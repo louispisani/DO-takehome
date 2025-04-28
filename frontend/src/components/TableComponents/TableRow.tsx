@@ -3,6 +3,7 @@ import { TableCell, Box, Avatar, Typography, IconButton, Link, TextField, TableR
 import { GridCloseIcon, GridAddIcon } from "@mui/x-data-grid";
 import { TAssignee, TColumn, TColumnTypes } from "../../types/types";
 import { AssigneeTooltip } from "./AssigneeTooltip";
+import { formatDateInput, formatDateVal } from "../../utl/util";
 // memoize the rows to prevent unnecessary re-renders
 const Row = React.memo(({
     allAssignees,
@@ -17,16 +18,6 @@ const Row = React.memo(({
     row,
     setAnchorEl,
 }: RowProps) => {
-
-    const formatDateInput = (dateStr: string) => {
-        const d = new Date(dateStr);
-
-        return d.toISOString().split("T")[0];
-    };
-    const formatDateVal = (dateStr: string) => {
-        const [year, month, day] = dateStr.split("-");
-        return `${month}/${day}/${year}`;
-    }
     // render row dynamically based on the column type
     return (
         <TableRow key={row.id}>
