@@ -143,7 +143,7 @@ const App = () => {
 
   return (
     <Box p={3} display="flex" justifyContent="left" alignItems="left" flexDirection="column">
-      <Box mb={2} sx={{ fontSize: '24px', fontWeight: 'bold' }}>
+      <Box mb={2} sx={{ fontSize: '24px', fontWeight: 'bold', color: '#333' }}>
         Task Management
       </Box>
       <AssigneePopover
