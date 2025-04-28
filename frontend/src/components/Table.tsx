@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TAssignee, TColumn } from "../types/types";
+import { TAssignee, TColumn, TTask } from "../types/types";
 import {
     Box,
     Table,
@@ -98,5 +98,5 @@ interface AssignTableProps {
     isEditing: (id: string, field: string) => boolean;
     handleRemoveAssignee: (assignee: TAssignee) => Promise<void>;
     setAnchorEl: (anchorEl: HTMLElement | null) => void;
-    tasks: Array<{ [key: string]: any }>;
+    tasks: TTask[];
 }
