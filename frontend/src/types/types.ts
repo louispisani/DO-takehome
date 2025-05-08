@@ -25,7 +25,6 @@ export enum TColumnTypes {
 
 export type TTask = {
     id: string;
-    title: string;
     assignees: TUser[];
     status: string;
     priority: string;
